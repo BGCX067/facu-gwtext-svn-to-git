@@ -1,0 +1,9 @@
+* showcasepanel es como mi panelbase
+* revision 18 tiene en cuenta el onClick pero no hace nada
+
+
+*****
+
+http://demo.backbase.com/travel/
+http://www.fusioncharts.com/gadgets/Gallery.asp
+

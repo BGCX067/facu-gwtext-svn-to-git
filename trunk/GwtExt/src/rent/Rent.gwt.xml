@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module>
+	<!-- Inherit the core Web Toolkit stuff.                  -->
+	<inherits name="com.google.gwt.user.User"/>
+	<!-- Inherit the GWTExt Toolkit library configuration.	  -->
+	<inherits name="com.gwtext.GwtExt"/>
+	
+	<inherits name="net.sf.hibernate4gwt.Hibernate4Gwt"/>
+	
+	<source path="server/model" />
+	<source path="client" />
+	
+	<!-- Specify the app entry point class.                   -->
+	<entry-point class="rent.client.EntryPointAplicacion"/>
+	
+	
+	<servlet path="/ServicioControles" class="rent.server.serviciosImpl.ServicioControlesImpl"/>
+  	<servlet path="/ServicioPopUp" class="rent.server.serviciosImpl.ServicioPopUpImpl"/>
+  	
+</module>

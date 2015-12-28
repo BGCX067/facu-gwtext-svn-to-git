@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-cascade="save-update">
+
+	<class name="rent.server.model.DataDpto" table="fotos">
+
+		<id name="id" type="java.lang.Long">
+			<generator class="native"/>
+		</id>
+
+		<property name="idDpto" type="java.lang.Integer"/>
+		<property name="rutaArchivo" type="java.lang.String" length="50"/>
+		<property name="descripcion" type="java.lang.String" length="200"/>
+		
+	</class>
+</hibernate-mapping>

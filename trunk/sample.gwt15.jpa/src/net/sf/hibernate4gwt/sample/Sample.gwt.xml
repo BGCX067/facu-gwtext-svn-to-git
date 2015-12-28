@@ -1,0 +1,28 @@
+<module>
+
+	<!-- Inherit the core Web Toolkit stuff.                  -->
+	<inherits name='com.google.gwt.user.User'/>
+	<inherits name='com.google.gwt.i18n.I18N'/>
+	<inherits name='net.sf.hibernate4gwt.Hibernate4Gwt15'/>
+	<inherits name='net.sf.hibernate4gwt.emul.java5.ejb3.Ejb3'/>
+	<inherits name='com.gwtext.GwtExt'/> 
+	
+	<!-- Specify the app entry point class.                   -->
+	<entry-point class='net.sf.hibernate4gwt.sample.client.Sample'/>
+	
+	<!-- Additional source path -->
+	<source path='domain'/>
+	<source path='exception'/>
+	<source path='client'/>
+  
+  	<!-- Servlet path -->
+  	<servlet path="/MessageRemote" class="net.sf.hibernate4gwt.sample.server.gwt.MessageRemoteImpl"/>
+  	<servlet path="/LoginRemote" class="net.sf.hibernate4gwt.sample.server.gwt.LoginRemoteImpl"/>
+  	<servlet path="/UserRemote" class="net.sf.hibernate4gwt.sample.server.gwt.UserRemoteImpl"/>
+  	<servlet path="/ConfigurationRemote" class="net.sf.hibernate4gwt.sample.server.gwt.ConfigurationRemoteImpl"/>
+  	
+  	<stylesheet src="js/ext/resources/css/ext-all.css" />
+	<script src="js/ext/adapter/ext/ext-base.js" />
+	<script src="js/ext/ext-all.js" />
+	
+</module>

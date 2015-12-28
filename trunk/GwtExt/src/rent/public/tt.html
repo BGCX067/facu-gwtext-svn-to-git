@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>JavaScript Bs_Slider example 1</title>
+
+<style>
+  .sliderInput {
+  	height:20;
+    width:40;
+  	font-family : Arial, Helvetica, sans-serif;
+  	font-size : 12px;
+  }
+  .smallTxt {
+    font-size: 12px;
+  }
+</style>
+
+<script type="text/javascript" src="LibCrossBrowser.js"></script>
+<script type="text/javascript" src="EventHandler.js"></script>
+<script type="text/javascript" src="Bs_FormUtil.lib.js"></script>
+<script type="text/javascript" src="Bs_Slider.class.js"></script>
+<script type="text/javascript" src="js/range.js"></script>
+<script type="text/javascript" src="js/timer.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+
+<script type="text/javascript"><!--
+function init(){
+  // - Slider 1 -----------------------------------------
+  mySlider = new Bs_Slider();
+  mySlider.attachOnChange(bsSliderChange);
+  mySlider.width         = 121;
+  mySlider.height        = 26;
+  mySlider.minVal        = 0;
+  mySlider.maxVal        = 10;
+  mySlider.valueInterval = 1;
+  mySlider.arrowAmount   = 2;
+  mySlider.valueDefault  = 4;
+  mySlider.imgDir        = '../img/';
+  mySlider.setBackgroundImage('bob/background.gif', 'no-repeat');
+  mySlider.setSliderIcon('bob/slider.gif', 13, 18);
+  mySlider.setArrowIconLeft('img/arrowLeft.gif', 16, 16);
+  mySlider.setArrowIconRight('img/arrowRight.gif', 16, 16);
+  mySlider.useInputField = 2;
+  mySlider.styleValueFieldClass = 'sliderInput';
+  mySlider.colorbar = new Object();
+  mySlider.colorbar['color']           = 'blue';
+  mySlider.colorbar['height']          = 5;
+  mySlider.colorbar['widthDifference'] = -12;
+  mySlider.colorbar['offsetLeft']      = 5;
+  mySlider.colorbar['offsetTop']       = 9;
+  mySlider.drawInto('sliderDiv1');
+
+  
+
+}
+
+/**
+* @param object sliderObj
+* @param int val (the value)
+*/
+function bsSliderChange(sliderObj, val, newPos){ 
+  document.test.attacedFieldValue.value = val;
+  alert(val);
+}
+/**
+* @param object sliderObj
+* @param int val (the value)
+*/
+function bsSliderStart(sliderObj, val, newPos){ 
+  alert('Started at '+ val +' (Pos:'+ newPos +')');
+}
+/**
+* @param object sliderObj
+* @param int val (the value)
+*/
+function bsSliderEnd(sliderObj, val, newPos){ 
+  sliderObj.valueInterval = 0.25;
+  sliderObj.setValue(newPos);
+  sliderObj.valueInterval = 0.05;
+  document.test.attacedFieldValue.value = sliderObj.getValue();
+}
+
+// --></script>
+
+</head>
+<body bgcolor="#FFFFFF" text="#3366AA" link="#0000EE" vlink="#551A8B" alink="#FF0000" onLoad="init();">
+
+<h1>JavaScript Bs_Slider example 1</h1>
+
+<form  name="test" id="test" action="http://www.blueshoes.org/postDump.php" method="post">
+  All sliders below have an "onChange"-event attached that calls an user-defined function ('bsSliderChange()') 
+  that updates this form field: <input type="text" name="attacedFieldValue" value="" size="6" style="background:yellow;">          
+	<br><br>
+	<input type="submit">
+</form>
+
+<table border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th width="250" align="left">Sliders
+    </th>
+    <th align="left">Attributes 
+    </th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <div id="sliderDiv1"></div>
+    </td>
+    <td class="smallTxt" valign="top">
+      <ul>
+        <li>number range: from 0-10</li>
+        <li>default value: 2</li>
+        <li>step: 1 (so only full numbers allowed)</li>
+        <li>arrow-click: moves 2</li>
+        <li>input-field: always visible as such</li>
+      </ul>
+    </td>
+  </tr>
+ 
+</table>
+</body></html>
+
